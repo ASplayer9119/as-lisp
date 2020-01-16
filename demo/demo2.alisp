@@ -1,0 +1,9 @@
+(defn tree (n c)
+    (defn st (n v) (cond (< n 1) "" (++ v (st (- n 1) v))))
+    (defn go (i)
+        (def vet (st (- n i) c))
+        (cond (< i 1) \n
+              (++ \n (st i " ") vet "|" vet (go (- i 1))) ))
+    (++ (st n " ") "X" (go (- n 1))) )
+
+(tree 15 "@")

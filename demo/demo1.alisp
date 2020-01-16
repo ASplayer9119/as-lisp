@@ -1,0 +1,9 @@
+(def compose (lambda (f g) (lambda (x) (f (g x)))))
+
+(def inc (lambda (x) (+ x 1)))
+
+(def square (lambda (x) (* x x)))
+
+(def res ((compose square inc) 6))
+
+res
